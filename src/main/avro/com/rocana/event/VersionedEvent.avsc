@@ -1,0 +1,18 @@
+{
+  "namespace": "com.rocana.event",
+  "name": "VersionedEvent",
+  "type": "record",
+  "doc": "A versioned event.",
+  "fields": [
+    {
+      "name": "version",
+      "type": "long",
+      "doc": "The version of the event schema used to serialize the event. Required."
+    },
+    {
+      "name": "event",
+      "type": "bytes",
+      "doc": "The serialized version of the event. Required."
+    }
+  ]
+}

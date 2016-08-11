@@ -1,0 +1,67 @@
+{
+  "namespace": "com.rocana.event",
+  "name": "Event",
+  "type": "record",
+  "doc": "A generic event. See the reference guide for event format information.",
+  "version": 3,
+  "fields": [
+    {
+      "name": "version",
+      "type": "long",
+      "doc": "Version of this schema",
+      "default": 3
+    },
+    {
+      "name": "id",
+      "type": [ "null", "string" ],
+      "doc": "A globally unique identifier for this event.",
+      "default": null
+    },
+    {
+      "name": "ts",
+      "type": "long",
+      "doc": "Epoch timestamp in millis. Required."
+    },
+    {
+      "name": "event_type_id",
+      "type": "int",
+      "doc": "ID indicating the type of event. Required."
+    },
+    {
+      "name": "source",
+      "type": [ "string", "null" ],
+      "doc": "Deprecated event source. Optional.",
+      "default": ""
+    },
+    {
+      "name": "location",
+      "type": "string",
+      "doc": "Location from which the event was generated. Required.",
+      "default": ""
+    },
+    {
+      "name": "host",
+      "type": "string",
+      "doc": "Hostname, IP, or other device identifier from which the event was generated. Required.",
+      "default": ""
+    },
+    {
+      "name": "service",
+      "type": "string",
+      "doc": "Service or process from which the event was generated. Required.",
+      "default": ""
+    },
+    {
+      "name": "body",
+      "type": [ "null", "bytes" ],
+      "doc": "Raw event content in bytes. Optional.",
+      "default": null
+    },
+    {
+      "name": "attributes",
+      "type": { "type": "map", "values": "string" },
+      "doc": "Event type-specific key/value pairs, usually extracted from the event body. Required.",
+      "order": "ignore"
+    }
+  ]
+}
