@@ -64,6 +64,17 @@
     </contributor>
   </contributors>
 
+  <distributionManagement>
+    <snapshotRepository>
+      <id>rocana-snapshots</id>
+      <url>http://repository.rocana.com/content/repositories/com.scalingdata.snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>rocana-releases</id>
+      <url>http://repository.rocana.com/content/repositories/com.scalingdata.releases/</url>
+    </repository>
+  </distributionManagement>
+
   <profiles>
     <profile>
       <id>release</id>
@@ -201,6 +212,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
         <version>2.3.2</version>
+        <configuration>
+          <releaseProfiles>release</releaseProfiles>
+        </configuration>
       </plugin>
 
     </plugins>
