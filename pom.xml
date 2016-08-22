@@ -198,6 +198,8 @@
             <exclude>.git/**</exclude>
             <!-- Maven repo on jenkins -->
             <exclude>.repository/**</exclude>
+            <!-- Rat can't detect the license info in the readme. -->
+            <exclude>README.md</exclude>
             <!-- Avro schemas are JSON and don't allow comments for license headers. -->
             <exclude>src/main/avro/**</exclude>
           </excludes>
