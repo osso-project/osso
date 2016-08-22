@@ -86,4 +86,5 @@ Please use [Github pull requests][github-prs] to submit code.
 
 ## License
 
-Osso is distributed under the Apache License 2.0. See LICENSE for more information.
+Osso is distributed under the Apache License 2.0. See the LICENSE file included
+with this source code for more information.
