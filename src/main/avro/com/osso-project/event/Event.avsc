@@ -1,10 +1,16 @@
 {
-  "namespace": "com.rocana.event",
-  "name": "EventV2",
+  "namespace": "com.osso-project.event",
+  "name": "Event",
   "type": "record",
-  "doc": "A generic event. See the reference guide for event format information. This version was used in releases 1.0 through 1.4.x",
-  "version": 2,
+  "doc": "A generic event. See the reference guide for event format information.",
+  "version": 3,
   "fields": [
+    {
+      "name": "version",
+      "type": "long",
+      "doc": "Version of this schema",
+      "default": 3
+    },
     {
       "name": "id",
       "type": [ "null", "string" ],

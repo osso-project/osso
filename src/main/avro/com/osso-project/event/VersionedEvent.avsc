@@ -1,5 +1,5 @@
 {
-  "namespace": "com.rocana.event",
+  "namespace": "com.osso-project.event",
   "name": "VersionedEvent",
   "type": "record",
   "doc": "A versioned event.",

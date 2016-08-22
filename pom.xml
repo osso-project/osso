@@ -23,7 +23,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.rocana</groupId>
-  <artifactId>oei</artifactId>
+  <artifactId>osso</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
   <properties>
@@ -51,10 +51,12 @@
     </license>
   </licenses>
 
+  <url>http://www.osso-project.com</url>
+
   <scm>
-    <url>https://github.com/open-event-initiative/t1</url>
-    <connection>scm:git:git@github.com:open-event-initiative/t1.git</connection>
-    <developerConnection>scm:git:git@github.com:open-event-initiative/t1.git</developerConnection>
+    <url>https://github.com/osso-project/osso</url>
+    <connection>scm:git:git@github.com:osso-project/osso.git</connection>
+    <developerConnection>scm:git:git@github.com:osso-project/osso.git</developerConnection>
     <tag>master</tag>
   </scm>
 
@@ -172,7 +174,7 @@
         <configuration>
           <stringType>String</stringType>
           <imports>
-            <import>${basedir}/src/main/avro/com/rocana/event/Event.avsc</import>
+            <import>${basedir}/src/main/avro/com/osso-project/event/Event.avsc</import>
           </imports>
         </configuration>
         <executions>
