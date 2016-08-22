@@ -22,7 +22,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.rocana</groupId>
+  <groupId>com.osso-project</groupId>
   <artifactId>osso</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
