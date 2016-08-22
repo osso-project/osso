@@ -42,6 +42,7 @@
 
     <!-- Dependency versions -->
     <version.avro>1.7.6</version.avro>
+    <version.junit>4.12</version.junit>
   </properties>
 
   <licenses>
@@ -226,10 +227,26 @@
 
   <dependencies>
 
+    <!--
+      Please keep all dependencies ordered by groupId and artifactId, in each
+      group. Extract all versions into properties above.
+    -->
+
+    <!-- Project compile dependencies. -->
+
     <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
       <version>${version.avro}</version>
+    </dependency>
+
+    <!-- Project test dependencies. -->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${version.junit}</version>
+      <scope>test</scope>
     </dependency>
 
   </dependencies>
