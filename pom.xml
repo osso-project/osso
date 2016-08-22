@@ -174,7 +174,7 @@
         <configuration>
           <stringType>String</stringType>
           <imports>
-            <import>${basedir}/src/main/avro/com/osso-project/event/Event.avsc</import>
+            <import>${basedir}/src/main/avro/com/osso/event/Event.avsc</import>
           </imports>
         </configuration>
         <executions>

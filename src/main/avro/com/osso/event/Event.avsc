@@ -1,5 +1,5 @@
 {
-  "namespace": "com.osso-project.event",
+  "namespace": "com.osso.event",
   "name": "Event",
   "type": "record",
   "doc": "A generic event. See the reference guide for event format information.",

@@ -1,5 +1,5 @@
 {
-  "namespace": "com.osso-project.event",
+  "namespace": "com.osso.event",
   "name": "EventV1",
   "type": "record",
   "doc": "Version 1 of a generic event. This version was used in releases 0.11 and earlier.",
