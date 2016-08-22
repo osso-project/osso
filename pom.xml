@@ -71,7 +71,7 @@
   <distributionManagement>
     <snapshotRepository>
       <id>osso-snapshots</id>
-      <url>http://repository.rocana.com/content/repositories/osso/</url>
+      <url>http://repository.rocana.com/content/repositories/osso-snapshots/</url>
     </snapshotRepository>
     <repository>
       <id>osso-releases</id>
