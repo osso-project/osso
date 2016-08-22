@@ -70,12 +70,12 @@
 
   <distributionManagement>
     <snapshotRepository>
-      <id>rocana-snapshots</id>
-      <url>http://repository.rocana.com/content/repositories/com.scalingdata.snapshots/</url>
+      <id>osso-snapshots</id>
+      <url>http://repository.rocana.com/content/repositories/osso/</url>
     </snapshotRepository>
     <repository>
-      <id>rocana-releases</id>
-      <url>http://repository.rocana.com/content/repositories/com.scalingdata.releases/</url>
+      <id>osso-releases</id>
+      <url>http://repository.rocana.com/content/repositories/osso/</url>
     </repository>
   </distributionManagement>
 
