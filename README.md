@@ -69,6 +69,10 @@ _"Why not use JSON as the serialization format?"_
 
 _"Why not use **insert other serialization format** as the serialization format?"_
 
+_"How do I pronounce 'Osso'?"_
+
+`OH-so` - `OH` like "open", and `so` like "so," in English.
+
 ## Contributing
 
 ### Issue Tracking
