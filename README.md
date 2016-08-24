@@ -11,7 +11,7 @@ systems easy, while still being size- and processing-efficient.
 
 An Osso event is largely use case agnostic, and can represent a log message, stack
 trace, metric sample, user action taken, ad display or click, generic HTTP event,
-and so on. Every event has a set of common fields as well as optional key/value
+or otherwise. Every event has a set of common fields as well as optional key/value
 attributes that are typically event type-specific.
 
 The common event fields are:
@@ -26,6 +26,18 @@ The common event fields are:
   * Body (byte array) - The body or "payload" of the event.
 
 The event attributes are always a set of string/string key/value pairs.
+
+The event model is formally defined by an [Apache Avro][apache-avro] schema that can
+be found at `src/main/avro/com/osso/event/Event.avsc` ([view on Github][github-schema]),
+and are serialized as Avro objects when transferred over the wire between systems.
+Systems are free to use this same format when storing events on disk. Some serialization
+libraries such as [Apache Parquet][apache-parquet] - a highly optimized columnar
+storage format - can also serialize to and from Avro objects, making it an appealing
+in-memory representation.
+
+[apache-avro]: http://avro.apache.org/
+[github-schema]: https://github.com/osso-project/osso/blob/master/src/main/avro/com/osso/event/Event.avsc
+[apache-parquet]: http://parquet.apache.org/
 
 ### Event Types, Bodies, and Attributes
 
