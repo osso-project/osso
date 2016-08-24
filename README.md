@@ -16,8 +16,8 @@ attributes that are typically event type-specific.
 
 The common event fields are:
 
-  * Version (int) - The Osso event format version.
-  * Event type (long) - A numeric event type.
+  * Version (long) - The Osso event format version.
+  * Event type ID (int) - A numeric event type.
   * Event ID (string) - An ID that uniquely identifies an event.
   * Timestamp (long) - A millisecond-accurate epoch timestamp indicating the moment the event occurred.
   * Location (string) - The location that generated the event.
