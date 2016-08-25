@@ -140,7 +140,7 @@ Of course, in a production system, processing events with hard-coded rules like
 this is probably not ideal, but it logically illustrates how code can promote
 generic events. It's equally obvious to see how one might implement other kinds
 of event processing such as filtering, masking, aggregation, and so on. These
-techniques, and Osso events - are compatible with all stream processing systems
+techniques - and Osso events - are compatible with all stream processing systems
 and libraries including [Apache Spark][apache-spark], [Apache Flink][apache-flink],
 [Kafka Streams][kafka-streams], and [Akka][akka].
 
