@@ -116,11 +116,9 @@ void onEvent(Event event) {
             .setEventTypeId(54321)
             .setAttributes(attrs)
             .build();
-          );
 
           // Emit a new "promoted" event in place of the original.
           emit(securityEvent);
-
           break;
 
         // Other syslog processing rules
