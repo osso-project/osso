@@ -49,7 +49,7 @@ each type of event has its own specific schema of which all systems must be made
 
 While flexible, this model requires that there be a way to indicate to downstream systems
 (i.e. consumers of these events) how to process the event type-specific data. The
-`event_type_id` field acts as this identifier. Downstream systems use the even type to
+`event_type_id` field acts as this identifier. Downstream systems use the event type to
 decide how they should interpret the event payload in the `body` field, and what key/value
 pairs they can expect in the `attributes` field. In this way, the event type is analogous
 to a class in a programming language like Java.
@@ -65,7 +65,7 @@ For example, let's assume event type 100 represents a generic syslog event
   ts:             1472076150211,
   location:       "aws/us-west-2a",
   host:           "some.host.name",
-  service:        "sshd",
+  service:        "dhclient",
   body:           [ **array of bytes representing the raw syslog event** ],
   attributes: {
     syslog_pid:       668,
