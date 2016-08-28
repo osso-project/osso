@@ -19,6 +19,9 @@ package com.osso.event.id;
 import com.osso.event.Event;
 import org.apache.avro.Schema;
 
+/**
+ * Convenience functions for working with event IDs.
+ */
 public final class EventIds {
 
   private static final EventIdGenerator generatorV1 = new EventIdGeneratorV1();
@@ -28,12 +31,33 @@ public final class EventIds {
   private EventIds() {
   }
 
+  /**
+   * <p>
+   *   Populate the given event's <tt>id</tt> field using an ID generator most
+   *   appropriate for the event's version.
+   * </p>
+   * <p>
+   *   As its name implies, this method mutates the supplied event. If that's
+   *   not what you want, use {@link #generatorForEvent(Event)} and use it
+   *   to generate an ID directly.
+   * </p>
+   *
+   * @param event The event for which an ID should be generated and populated,
+   * and from which the version will be determined.
+   * @return A reference to the given event to make call chaining easier.
+   */
   public static Event populateId(Event event) {
     event.setId(generatorForEvent(event).generateId(event));
 
     return event;
   }
 
+  /**
+   * Get an event ID generator most appropriate for the event's version.
+   *
+   * @param event The event from which the version will be determined.
+   * @return An implementation of {@link EventIdGenerator}.
+   */
   public static EventIdGenerator generatorForEvent(Event event) {
     Schema schema = event.getSchema();
 
