@@ -156,7 +156,34 @@ TODO.
 
 ### Timestamps and Time
 
-TODO.
+All events have a timestamp, represented as a millisecond-precision epoch in
+UTC, and stored in the `ts` (timestamp) field. Systems producing events must
+populate this field. The event timestamp should indicate, to whatever extent
+possible, the time the event was originally _generated_, not the time it was
+received or processed. For _original producers_ of events - that is, systems
+that can natively produce Osso events - this is typically the current time, as
+understood by the device or system. This means that _proxy producers_ - systems
+that receive events in other formats and produce Osso events - should set this
+field to the time the received event was originally generated rather than the
+time it was received, parsed, or otherwise handled by the proxy producer. If the
+received event does not have a timestamp, or it is unavailable for some other
+reason, the proxy producer must populate the event with the processed time. This
+behavior must be documented by the proxy producer.
+
+Consider the syslog example from earlier where an agent (i.e. a proxy producer)
+is receiving syslog events and producing them as Osso events. Assume the
+following syslog event is received:
+
+```
+Nov 17 20:53:27 localhost sudo: someuser : TTY=pts/13 ; PWD=/home/someuser ; USER=root ; COMMAND=/some/command
+```
+
+The appropriate behavior is to parse the timestamp from the original event,
+`Nov 17 20:53:27`, into the proper value for the `ts` field. Some protocols
+(including syslog) can present challenges such as omitting information - the
+year and time zone, in this example - but the proxy producer must resolve these
+issues and produce a valid timestamp. Similarly, proxy producers must also
+perform time zone conversion if the received timestamp is not already in UTC.
 
 ### Standard Event Types
 
