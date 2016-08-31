@@ -187,7 +187,10 @@ perform time zone conversion if the received timestamp is not already in UTC.
 
 ### Standard Event Types
 
-TODO.
+In addition to defining the schema and semantics of events, Osso also defines a
+number of standard event types that are common across many different use cases.
+
+The list of standard event types is forthcoming.
 
 ### Example Uses
 
