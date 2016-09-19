@@ -68,9 +68,9 @@ For example, let's assume event type 100 represents a generic syslog event
   service:        "dhclient",
   body:           [ **array of bytes representing the raw syslog event** ],
   attributes: {
-    syslog_pid:       668,
-    syslog_facility:  3,
-    syslog_severity:  6,
+    syslog_pid:       "668",
+    syslog_facility:  "3",
+    syslog_severity:  "6",
     syslog_process:   "dhclient",
     syslog_message:   "DHCPACK from 10.10.0.1 (xid=0x45b63bdc)",
     ...
