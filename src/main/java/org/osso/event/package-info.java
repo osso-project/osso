@@ -18,4 +18,4 @@
  * Osso Event definitions and utilities.
  */
 
-package com.osso.event;
+package org.osso.event;

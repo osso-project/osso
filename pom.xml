@@ -22,7 +22,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.osso-project</groupId>
+  <groupId>org.osso-project</groupId>
   <artifactId>osso</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
@@ -175,7 +175,7 @@
         <configuration>
           <stringType>String</stringType>
           <imports>
-            <import>${basedir}/src/main/avro/com/osso/event/Event.avsc</import>
+            <import>${basedir}/src/main/avro/org/osso/event/Event.avsc</import>
           </imports>
         </configuration>
         <executions>

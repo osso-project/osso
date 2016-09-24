@@ -1,5 +1,5 @@
 {
-  "namespace": "com.osso.event",
+  "namespace": "org.osso.event",
   "name": "EventV2",
   "type": "record",
   "doc": "A generic event. See the reference guide for event format information. This version was used in releases 1.0 through 1.4.x",
