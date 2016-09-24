@@ -1,5 +1,7 @@
 # Osso
 
+[![TravisCI](https://api.travis-ci.org/osso-project/osso.svg)](https://travis-ci.org/osso-project/osso)
+
 A modern standard for representing event-oriented data.
 
 ## What is Osso?
