@@ -63,10 +63,14 @@ uploadArchives {
 
     mavenDeployer {
 
+      def auth = {
+        authentication(userName: project.property('username'), password: project.property('password'))
+      }
+
       if ((project.version as String).endsWith('-SNAPSHOT')) {
-        repository url: "http://repository.rocana.com/content/repositories/osso-snapshots"
+        repository(url: "http://repository.rocana.com/content/repositories/osso-snapshots", auth)
       } else {
-        repository url: "http://repository.rocana.com/content/repositories/osso"
+        repository(url: "http://repository.rocana.com/content/repositories/osso", auth)
       }
 
       pom {
