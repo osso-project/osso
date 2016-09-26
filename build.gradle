@@ -63,8 +63,10 @@ uploadArchives {
 
     mavenDeployer {
 
-      def auth = {
-        authentication(userName: project.property('username'), password: project.property('password'))
+      Closure auth = {
+        if (project.hasProperty('username') && project.hasProperty('password')) {
+          authentication(userName: project.property('username'), password: project.property('password'))
+        }
       }
 
       if ((project.version as String).endsWith('-SNAPSHOT')) {
