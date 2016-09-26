@@ -1,10 +1,22 @@
 {
-  "namespace": "com.osso.event",
-  "name": "EventV1",
+  "namespace": "org.osso.event",
+  "name": "Event",
   "type": "record",
-  "doc": "Version 1 of a generic event. This version was used in releases 0.11 and earlier.",
-  "version": 1,
+  "doc": "A generic event. See the reference guide for event format information.",
+  "version": 3,
   "fields": [
+    {
+      "name": "version",
+      "type": "long",
+      "doc": "Version of this schema",
+      "default": 3
+    },
+    {
+      "name": "id",
+      "type": [ "null", "string" ],
+      "doc": "A globally unique identifier for this event.",
+      "default": null
+    },
     {
       "name": "ts",
       "type": "long",
@@ -48,7 +60,8 @@
     {
       "name": "attributes",
       "type": { "type": "map", "values": "string" },
-      "doc": "Event type-specific key/value pairs, usually extracted from the event body. Required."
+      "doc": "Event type-specific key/value pairs, usually extracted from the event body. Required.",
+      "order": "ignore"
     }
   ]
 }
