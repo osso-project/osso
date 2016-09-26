@@ -14,8 +14,20 @@
  * limitations under the License.
  */
 
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "gradle.plugin.org.nosphere.apache:creadur-rat-gradle:0.2.2"
+  }
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'org.nosphere.apache.rat'
 apply plugin: com.rocana.gradle.AvroPlugin
 
 project.group = 'org.osso-project'
@@ -41,4 +53,27 @@ avro {
     stringType = "String"
   }
 
+}
+
+rat {
+  inputDir = project.projectDir
+  xmlOutput = false
+  htmlOutput = true
+  excludes = [
+    // Generated gradle wrapper files
+    'gradlew',
+    'gradlew.bat',
+    'gradle/**',
+    // Gradle cache and build diectories
+    '**/.gradle/**',
+    '**/build/**',
+    // Maven build directories
+    '**/target/**',
+    // IDE files
+    '.idea/**',
+    // Avro schema files are JSON and don't support comments.
+    'src/main/avro/**',
+    // Documentation and notices
+    'README.md',
+  ]
 }
