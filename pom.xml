@@ -202,6 +202,13 @@
             <exclude>README.md</exclude>
             <!-- Avro schemas are JSON and don't allow comments for license headers. -->
             <exclude>src/main/avro/**</exclude>
+            <!-- Exclude gradle wrapper generated files. -->
+            <exclude>**/gradlew*</exclude>
+            <exclude>gradle/**</exclude>
+            <exclude>buildSrc/gradle/**</exclude>
+            <!-- Exclude gradle build and temp files. -->
+            <exclude>**/build/**</exclude>
+            <exclude>**/.gradle/**</exclude>
           </excludes>
         </configuration>
         <executions>
