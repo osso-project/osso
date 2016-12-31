@@ -1,5 +1,5 @@
 {
-  "namespace": "com.osso.event",
+  "namespace": "org.osso.event",
   "name": "VersionedEvent",
   "type": "record",
   "doc": "A versioned event.",

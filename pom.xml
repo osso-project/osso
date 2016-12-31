@@ -22,7 +22,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.osso-project</groupId>
+  <groupId>org.osso-project</groupId>
   <artifactId>osso</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
@@ -175,7 +175,7 @@
         <configuration>
           <stringType>String</stringType>
           <imports>
-            <import>${basedir}/src/main/avro/com/osso/event/Event.avsc</import>
+            <import>${basedir}/src/main/avro/org/osso/event/Event.avsc</import>
           </imports>
         </configuration>
         <executions>
@@ -202,6 +202,13 @@
             <exclude>README.md</exclude>
             <!-- Avro schemas are JSON and don't allow comments for license headers. -->
             <exclude>src/main/avro/**</exclude>
+            <!-- Exclude gradle wrapper generated files. -->
+            <exclude>**/gradlew*</exclude>
+            <exclude>gradle/**</exclude>
+            <exclude>buildSrc/gradle/**</exclude>
+            <!-- Exclude gradle build and temp files. -->
+            <exclude>**/build/**</exclude>
+            <exclude>**/.gradle/**</exclude>
           </excludes>
         </configuration>
         <executions>
