@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.osso.event;
+package org.osso.event;
 
 import org.junit.Assert;
 import org.junit.Test;
