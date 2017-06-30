@@ -42,3 +42,12 @@ avro {
   }
 
 }
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+  classifier = "javadoc"
+  destinationDir = file("$buildDir/libs/")
+
+  from javadoc.destinationDir
+}
+
+assemble.dependsOn(javadocJar)
