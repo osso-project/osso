@@ -27,6 +27,7 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'maven'
 apply plugin: 'org.nosphere.apache.rat'
 apply plugin: com.rocana.gradle.AvroPlugin
 
@@ -76,4 +77,61 @@ rat {
     // Documentation and notices
     'README.md',
   ]
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+  classifier = "javadoc"
+  destinationDir = file("$buildDir/libs/")
+
+  from javadoc.destinationDir
+}
+
+assemble.dependsOn(javadocJar)
+
+artifacts {
+  archives javadocJar
+}
+
+uploadArchives {
+
+  repositories {
+
+    mavenDeployer {
+
+      Closure auth = {
+        if (project.hasProperty('username') && project.hasProperty('password')) {
+          authentication(userName: project.property('username'), password: project.property('password'))
+        }
+      }
+
+      if ((project.version as String).endsWith('-SNAPSHOT')) {
+        repository(url: "http://repository.rocana.com/content/repositories/osso-snapshots", auth)
+      } else {
+        repository(url: "http://repository.rocana.com/content/repositories/osso", auth)
+      }
+
+      pom {
+        project {
+          artifactId 'osso'
+          url 'http://www.osso-project.org/'
+          licenses {
+            license {
+              name 'The Apache License, Version 2.0'
+              url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+            }
+          }
+          issueManagement {
+            system 'Github'
+            url 'https://github.com/osso-project/osso/issues'
+          }
+          scm {
+            connection 'scm:git:git@github.com:osso-project/osso.git'
+            developerConnection 'scm:git:git@github.com:osso-project/osso.git'
+            url 'https://github.com/osso-project/osso'
+            tag 'master'
+          }
+        }
+      }
+    }
+  }
 }
