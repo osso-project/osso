@@ -28,7 +28,6 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'maven'
->>>>>>> master
 apply plugin: 'org.nosphere.apache.rat'
 apply plugin: com.rocana.gradle.AvroPlugin
 
